@@ -182,6 +182,10 @@ debug.hwui.target_cpu_time_percent=30
 # Incremental FS
 ro.incremental.enable=yes
 
+# LMKD/PSI
+ro.lmk.kill_heaviest_task=true
+ro.lmk.kill_timeout_ms=15
+
 # Media
 debug.stagefright.c2inputsurface=-1
 vendor.media.omx=0
