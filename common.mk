@@ -22,6 +22,9 @@ PRODUCT_PACKAGES += \
     KeyHandler \
     tri-state-key-calibrate
 
+# ART
+PRODUCT_SYSTEM_SERVER_COMPILER_FILTER := speed-profile
+
 # Audio
 PRODUCT_PACKAGES += \
     android.hardware.audio.service \
@@ -113,7 +116,7 @@ PRODUCT_PACKAGES += \
     disable_configstore
 
 # Dalvik
-$(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
+$(call inherit-product, frameworks/native/build/phone-xhdpi-8192-dalvik-heap.mk)
 
 # DebugFS
 PRODUCT_SET_DEBUGFS_RESTRICTIONS := true
@@ -145,7 +148,8 @@ PRODUCT_PACKAGES += \
 
 # Doze
 PRODUCT_PACKAGES += \
-    OplusDoze
+    OplusDoze \
+    OplusDozeResCommon
 
 # DRM
 PRODUCT_PACKAGES += \
@@ -185,10 +189,6 @@ PRODUCT_COPY_FILES += \
 # Health
 PRODUCT_PACKAGES += \
     android.hardware.health-service.qti
-
-# Hotword enrollement
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/privapp-permissions-hotword.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-hotword.xml
 
 # IPACM
 PRODUCT_PACKAGES += \

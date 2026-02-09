@@ -153,8 +153,12 @@ persist.vendor.bluetooth.scan_ratio_optimization=3
 persist.vendor.bluetooth.simultaneous_discovery=false
 persist.vendor.bluetooth.wearable_connection_stability=true
 persist.vendor.bt.a2dp_offload_cap_extension=true
+persist.vendor.bt.a2dp.hal.implementation=true
 persist.vendor.bt.aac_frm_ctl.enabled=true
-persist.vendor.qcom.bluetooth.a2dp_offload_cap=sbc-aac-aptx-aptxhd-ldac
+persist.vendor.btstack.connect.peer_earbud=true
+persist.vendor.btstack.enable.twsplus=true
+persist.vendor.btstack.enable.twsplussho=true
+persist.vendor.qcom.bluetooth.a2dp_offload_cap=sbc-aac-aptx-aptxtws-aptxhd-ldac
 persist.vendor.qcom.bluetooth.aac_frm_ctl.enabled=true
 persist.vendor.qcom.bluetooth.enable.splita2dp=true
 persist.vendor.qcom.bluetooth.scram.enabled=true
@@ -211,8 +215,12 @@ vendor.gatekeeper.disable_spu=true
 
 # Graphics
 debug.egl.hw=0
+debug.graphics.game_default_frame_rate.disabled=true
+debug.sf.enable_adpf_cpu_hint=true
+debug.sf.enable_egl_image_tracker=0
 debug.sf.enable_transaction_tracing=false
 debug.sf.hw=0
+debug.sf.latch_unsignaled=0
 debug.sf.enable_gl_backpressure=0
 debug.sf.predict_hwc_composition_strategy=0
 persist.sys.sf.color_saturation=1.0
@@ -246,6 +254,7 @@ persist.log.tag.QC2Buf=W
 persist.log.tag.QC2V4l2Codec=E
 
 # Media
+debug.sdm.support_writeback=0
 debug.stagefright.c2inputsurface=-1
 vendor.media.omx=0
 
@@ -257,9 +266,6 @@ persist.sys.oem.otg_support=true
 
 # Perf
 ro.vendor.extension_library=libqti-perfd-client.so
-
-# Qualcomm System Daemon
-persist.vendor.qcomsysd.enabled=1
 
 # QTI
 ro.vendor.qti.va_aosp.support=1
@@ -278,6 +284,13 @@ persist.vendor.radio.rat_on=combine
 persist.vendor.radio.sib16_support=1
 ro.telephony.default_network=22,22
 
+# ScrollOptimizer
+persist.sys.perf.scroll_opt=true
+persist.sys.perf.scroll_opt.heavy_app=1
+
+# Sensors
+persist.vendor.sensors.debug.hal=0
+
 # USB
 vendor.usb.controller=a600000.dwc3
 sys.usb.mtp.batchcancel=1
@@ -295,3 +308,4 @@ ro.apk_verity.mode=2
 
 # Zygote
 zygote.critical_window.minute=10
+
