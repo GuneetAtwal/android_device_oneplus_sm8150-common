@@ -99,7 +99,21 @@ PRODUCT_PACKAGES += \
     android.frameworks.displayservice@1.0 \
     android.hardware.camera.provider@2.4-impl \
     android.hardware.camera.provider@2.4-service_64 \
+    OnePlusCameraService \
     vendor.oplus.hardware.performance-service
+
+
+ifeq ($(TARGET_SHIP_OOSCAM), true)
+PRODUCT_PACKAGES += \
+    OnePlusCamera \
+    OnePlusGallery
+
+# Properties
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.com.google.lens.oem_camera_package=com.oneplus.camera \
+    ro.com.google.lens.oem_image_package=com.oneplus.gallery
+endif
+
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.flash-autofocus.xml \
@@ -110,6 +124,8 @@ PRODUCT_COPY_FILES += \
 TARGET_BUILD_DEVICE_AS_WEBCAM := true
 
 $(call soong_config_set,libcameraservice,ext_lib,//$(LOCAL_PATH):libcameraservice_extension.opsm8150)
+$(call soong_config_set,camera,package_name,com.oplus.is.sdk.camera.package)
+$(call soong_config_set_bool,camera,needs_client_info_lib_oplus,true)
 
 # Configstore
 PRODUCT_PACKAGES += \
